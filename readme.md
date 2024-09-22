@@ -1,7 +1,3 @@
-Based on the details from the project provided, here's a possible README file for your GitHub repository:
-
----
-
 # Page Replacement Algorithm Simulator
 
 ## Overview
