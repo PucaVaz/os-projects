@@ -1,0 +1,14 @@
+from src.misc import load_processes, print_results
+from src.page_replacement_algorithms import PageReplacementSimulator
+import sys
+def main():
+    memory_simulation_data = load_processes(sys.argv[1])
+
+    page_replacement_simulator = PageReplacementSimulator(memory_simulation_data)
+    
+    print_results("FIFO", page_replacement_simulator.fifo())
+    print_results("OPTIMAL", page_replacement_simulator.optimal())
+    print_results("LRU", page_replacement_simulator.lru())
+
+if __name__ == "__main__":
+    main()
