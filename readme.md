@@ -68,9 +68,12 @@ LRU 8
 
 2. Compile or run the code:
    ```bash
+   python simulator.py 
+   ```
+   or pass as an argument which file do you want to use
+   ```bash
    python simulator.py input.txt
    ```
-
 3. Ensure the input file follows the format described above. The output will display the number of page faults for each algorithm.
 
 ## Requirements
