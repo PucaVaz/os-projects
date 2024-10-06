@@ -1,0 +1,3 @@
+from .page_replacement_algorithm import PageReplacementAlgorithm
+from .fifo_replacement import FIFOPageReplacement
+from .optimal_replacement import OptimalPageReplacement
