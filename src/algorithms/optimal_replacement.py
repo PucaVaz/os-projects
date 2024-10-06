@@ -3,6 +3,9 @@ from ..data_structures.doubly_linked_list import DoublyLinkedList
 from ..data_structures.node import Node
 
 class OptimalPageReplacement(PageReplacementAlgorithm):
+    """
+    Optimal page replacement algorithm.
+    """
     def __init__(self, capacity, page_references):
         super().__init__(capacity)
         self.page_references = page_references
@@ -16,11 +19,10 @@ class OptimalPageReplacement(PageReplacementAlgorithm):
             pass
         else:
             self.page_faults += 1
-            if self.size >= self.capacity:
-                self.replace_page()
-            else:
+            if self.size < self.capacity:
                 self.size += 1
-
+            else:
+                self.replace_page()
             new_node = Node(page_number)
             self.page_map[page_number] = new_node
             self.memory.insert_node_at_end(new_node)
@@ -31,7 +33,6 @@ class OptimalPageReplacement(PageReplacementAlgorithm):
         node_to_remove = self.find_page_to_replace()
         self.memory.delete_any_node(node_to_remove)
         del self.page_map[node_to_remove.data]
-        self.size -= 1
 
     def find_page_to_replace(self):
         farthest_future_use = -1
@@ -43,7 +44,7 @@ class OptimalPageReplacement(PageReplacementAlgorithm):
             try:
                 next_use = self.page_references.index(page_number, self.current_index)
             except ValueError:
-                next_use = float('inf')
+                next_use = float('inf')  # Page not used again
 
             if next_use > farthest_future_use:
                 farthest_future_use = next_use

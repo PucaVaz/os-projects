@@ -1,7 +1,10 @@
 from .page_replacement_algorithm import PageReplacementAlgorithm
 
 class FIFOPageReplacement(PageReplacementAlgorithm):
-    def __init__(self, capacity, page_references):
+    """
+    FIFOPageReplacement is a class that represents the FIFO page replacement algorithm.
+    """
+    def __init__(self, capacity):
         super().__init__(capacity)
         self.queue = []
 
