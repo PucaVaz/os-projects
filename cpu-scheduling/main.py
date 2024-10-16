@@ -1,35 +1,38 @@
 """
-Arquivo principal que irá ler o arquivo de entrada e aplicar os algoritmos de escalonamento, o FCFS, SJF e RR.
-e imprimir na seguinte ordem avg_turnaround, avg_response e avg_wait.
-Um exemplo do arquivo de entrada é:
+Main file that will read the input file and apply the scheduling algorithms: FCFS, SJF, and RR.
+It will print the results in the following order: avg_turnaround, avg_response, and avg_wait.
+An example of the input file is:
 0 20
 0 10
 4 6
 4 8
-e um exemplo da saída é:
-FCFS 30,5 19,5 19,5
-SJF 21,5 10,5 10,5
-RR 31,5 2,0 20,5
+And an example of the output is:
+FCFS 30.5 19.5 19.5
+SJF 21.5 10.5 10.5
+RR 31.5 2.0 20.5
 """
+
 import sys
 
-# Bibliotecas locais
-from src.implementacoes import Escalonamento
-from src.misc import print_results, load_processes
+# Local libraries
+from src.implementations import Scheduling
+from src.helpers import print_results, load_processes
 
 def main():
-    # Carregar os processos do arquivo de entrada em um diciário
-    processos = load_processes(sys.argv[1])
+    if len(sys.argv) > 1:
+        processes = load_processes(sys.argv[1])
+    else:
+        processes = load_processes("input.txt")
 
-    # Aplica os algoritmos de escalonamento
-    algoritmos_de_escalonamento = Escalonamento()
+    # Apply the scheduling algorithms
+    scheduling_algorithms = Scheduling()
     
-    # Calcula os resultados dos algoritmos de escalonamento
-    fcfs = algoritmos_de_escalonamento.escalonamento_fcfs(processos)
-    sjf = algoritmos_de_escalonamento.escalonamento_sjf(processos)
-    rr = algoritmos_de_escalonamento.escalonamento_rr(processos)
+    # Calculate the results of the scheduling algorithms
+    fcfs = scheduling_algorithms.scheduling_fcfs(processes)
+    sjf = scheduling_algorithms.scheduling_sjf(processes)
+    rr = scheduling_algorithms.scheduling_rr(processes)
 
-    # Imprime os resultados dos algoritmos de escalonamento na ordem avg_turnaround, avg_response e avg_wait
+    # Print the results of the scheduling algorithms in the order avg_turnaround, avg_response, and avg_wait
     print_results("FCFS", fcfs)
     print_results("SJF", sjf)
     print_results("RR", rr)

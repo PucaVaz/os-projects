@@ -60,30 +60,23 @@ LRU 8
 
 ## How to Run
 
-1. Clone the repository:
+1. Move to this folder:
    ```bash
-   git clone https://github.com/pucavaz/page-replacement-simulator.git
    cd page-replacement-simulator
    ```
 
-2. Compile or run the code:
+2. Run the code:
    ```bash
-   python simulator.py 
+   python3 simulator.py 
    ```
    or pass as an argument which file do you want to use
    ```bash
-   python simulator.py input.txt
+   python3 simulator.py input.txt
    ```
 3. Ensure the input file follows the format described above. The output will display the number of page faults for each algorithm.
 
 ## Requirements
 
 - Python 3.x 
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
 
 Feel free to modify the repository link and the programming language used based on your actual implementation!

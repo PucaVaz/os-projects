@@ -1,32 +1,34 @@
-# Algoritmos de escalonamento de CPU
+# CPU Scheduling Algorithms
 
-Este programa em Python aplica três algoritmos de escalonamento - FCFS, SJF e RR - a um conjunto de processos e imprime o tempo médio de retorno, o tempo médio de resposta e o tempo médio de espera para cada algoritmo.
+This Python program applies three scheduling algorithms—FCFS, SJF, and RR—to a set of processes and prints the average turnaround time, average response time, and average waiting time for each algorithm.
 
-## Formato de entrada
+## Input Format
 
-A entrada é composta por uma série de pares de
-números inteiros separados por um espaço em branco
-indicando o tempo de chegada e a duração de cada
-processo. A entrada termina com o fim do arquivo.
+The input consists of a series of integer pairs separated by a space, indicating the arrival time and duration of each process. The input ends at the end of the file.
 
-## Formato de saída
+## Output Format
 
-A saída é composta por linhas contendo a sigla de
-cada um dos três algoritmos e os valores das três
-métricas solicitadas.
+The output consists of lines containing the abbreviation of each of the three algorithms and the values of the three requested metrics.
 
-Cada linha apresenta a sigla do algoritmo e os
-valores médios (com uma casa decimal) para tempo
-de retorno, tempo de resposta e tempo de espera,
-exatamente nesta ordem, separados por um espaço
-em branco.
-## Como executar
+Each line presents the algorithm abbreviation and the average values (with one decimal place) for turnaround time, response time, and waiting time, in exactly this order, separated by a space.
 
-```bash
-python3 main.py input.txt
-```
+## How to Run
 
-### Exemplo de arquivo de entrada:
+1. Move to this folder:
+   ```bash
+   cd cpu-scheduling
+   ```
+
+2. Run the code:
+    ```bash
+    python3 main.py 
+    ```
+    or specify the path that you will use
+    ```bash
+    python3 main.py input.txt
+    ```
+
+### Example Input File:
 ```bash
 0 20
 0 10
@@ -34,9 +36,9 @@ python3 main.py input.txt
 4 8
 ```
 
-### Saída esperada:
-``` bash
-FCFS 30,5 19,5 19,5 
-SJF 21,5 10,5 10,5
-RR 31,5 2,0 20,5
+### Expected Output:
+```bash
+FCFS 30.5 19.5 19.5
+SJF 21.5 10.5 10.5
+RR 31.5 2.0 20.5
 ```
